@@ -16,7 +16,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&family=Exo+2:wght@700&family=Noto+Sans+Armenian:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@300;400&family=Exo+2:wght@700&family=Noto+Sans+Armenian:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -58,7 +58,7 @@
             font-family: 'Roboto', sans-serif;
             background: url('./fon.gif') no-repeat center center fixed;
             background-size: cover;
-            color: #e6d6e6;
+            color: #d8bfd8;
             min-height: 100vh;
             overflow-x: hidden;
             -webkit-overflow-scrolling: touch;
@@ -121,7 +121,7 @@
 
         .hamburger i {
             font-size: 24px;
-            color: #e6d6e6;
+            color: #d8bfd8;
         }
 
         .sidebar {
@@ -155,7 +155,7 @@
         .sidebar-menu a {
             display: flex;
             align-items: center;
-            color: #e6d6e6;
+            color: #d8bfd8;
             text-decoration: none;
             font-family: 'Noto Sans Armenian', sans-serif;
             font-size: 16px;
@@ -255,7 +255,7 @@
             align-items: center;
             margin: 6px 0;
             font-size: 18px;
-            color: #e6d6e6;
+            color: #b965b9;
         }
 
         .survey-option input[type="radio"] {
@@ -311,7 +311,7 @@
         .about-text {
             font-size: 22px;
             line-height: 2.0;
-            color: #e6d6e6;
+            color: #533453;
         }
 
         .verify-button {
@@ -356,7 +356,7 @@
             max-width: 400px;
             text-align: center;
             box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
-            color: #e6d6e6;
+            color: #d8bfd8;
         }
 
         .modal-content h2 {
@@ -377,10 +377,10 @@
 
         .modal-content .close-button {
             background: transparent;
-            border: 1px solid #e6d6e6;
+            border: 1px solid #d8bfd8;
             padding: 8px;
             border-radius: 25px;
-            color: #e6d6e6;
+            color: #d8bfd8;
             font-size: 14px;
             cursor: pointer;
             width: 100%;
@@ -454,7 +454,7 @@
             }
 
             .content-card {
-                padding: 15px;
+                padding: 25px;
                 margin-bottom: 15px;
             }
 
@@ -468,25 +468,25 @@
             }
 
             .balance-info span {
-                font-size: 24px;
+                font-size: 18px;
             }
 
             .balance-history {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .survey-question h3 {
-                font-size: 16px;
-                margin-bottom: 8px;
+                font-size: 14px;
+                margin-bottom: 6px;
             }
 
             .survey-option {
-                font-size: 14px;
+                font-size: 13px;
             }
 
             .survey-option input[type="radio"] {
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
             }
 
             .survey-option input[type="text"] {
@@ -505,11 +505,11 @@
             }
 
             .about-text {
-                font-size: 16px;
+                font-size: 13px;
             }
 
             .verify-button {
-                font-size: 14px;
+                font-size: 24px;
                 padding: 8px;
             }
 
@@ -528,7 +528,7 @@
             }
 
             .modal-content .close-button {
-                font-size: 13px;
+                font-size: 23px;
                 padding: 6px;
             }
         }
@@ -550,18 +550,18 @@
 
     <div class="sidebar" id="sidebar">
         <ul class="sidebar-menu">
-            <li><a href="#" class="active" data-section="balance" aria-label="Իմ Հաշիվը"><i class="fas fa-coins"></i> Իմ Հաշիվը</a></li>
-            <li><a href="#" data-section="survey" aria-label="Հարցումներ"><i class="fas fa-poll"></i> Հարցումներ</a></li>
-            <li><a href="#" data-section="about" aria-label="Մեր Մասին"><i class="fas fa-info-circle"></i> Մեր Մասին</a></li>
-            <li><a href="#" data-section="verify" aria-label="Վերիֆիկացիա"><i class="fas fa-check-circle"></i> Վերիֆիկացիա</a></li>
+            <li><a href="#" class="active" data-section="balance"><i class="fas fa-coins"></i> Իմ Հաշիվը</a></li>
+            <li><a href="#" data-section="survey"><i class="fas fa-poll"></i> Հարցումներ</a></li>
+            <li><a href="#" data-section="about"><i class="fas fa-info-circle"></i> Մեր Մասին</a></li>
+            <li><a href="#" data-section="verify"><i class="fas fa-check-circle"></i> Վերիֆիկացիա</a></li>
         </ul>
     </div>
 
     <div class="main-content">
         <section id="balance-section" class="content-section">
-            <div class="content-card" data-aos="fade-up">
+            <div class="content-card">
                 <h2 class="content-title">Իմ Հաշիվը</h2>
-                <div class="balance-info" id="balance-info" role="button" aria-label="Դիտել նույնականացման մանրամասները">
+                <div class="balance-info" id="balance-info">
                     <span id="balance-text">5000 Դրամ</span>
                 </div>
                 <div class="balance-history" id="balance-history"></div>
@@ -569,7 +569,7 @@
         </section>
 
         <section id="survey-section" class="content-section" style="display: none;">
-            <div class="content-card" data-aos="fade-up">
+            <div class="content-card">
                 <h2 class="content-title">Ամենօրյա Հարցում</h2>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
@@ -579,7 +579,7 @@
         </section>
 
         <section id="about-section" class="content-section" style="display: none;">
-            <div class="content-card" data-aos="fade-up">
+            <div class="content-card">
                 <h2 class="content-title">Մեր Մասին</h2>
                 <div class="about-text">
                     <p>Մենք NextGen Artificial Intelligence Recognition Initiative՝ երիտասարդ ընկերություն ենք, որը նվիրված է արհեստական բանականության (AI) ուսումնասիրությանը: Մեր առաքելությունն է ստեղծել ապագայի տեխնոլոգիաներ, որոնք կօգնեն մարդկանց Հայաստանում և ամբողջ աշխարհում:</p>
@@ -593,12 +593,12 @@
         </section>
 
         <section id="verify-section" class="content-section" style="display: none;">
-            <div class="content-card" data-aos="fade-up">
+            <div class="content-card">
                 <h2 class="content-title">Նույնականացում</h2>
                 <p>Անցեք նույնականացում՝ Ձեր վաստակած գումարները դուրս բերելու համար:</p>
-                <p><strong>ՈՒՇԱԴՐՈՒԹՅՈՒՆ</strong></p>
+                <p>ՈՒՇԱԴՐՈՒԹՅՈՒՆ</p>
                 <p>Նույնականացումն անհրաժեշտ է խարդախությունից խուսափելու և Ձեր անվտանգությունն ապահովելու համար:</p>
-                <button class="verify-button" id="verify-button" aria-label="Անցնել նույնականացում">Անցնել նույնականացում</button>
+                <button class="verify-button" id="verify-button">Անցնել նույնականացում</button>
             </div>
         </section>
     </div>
@@ -606,9 +606,9 @@
     <div id="verify-modal" class="modal">
         <div class="modal-content">
             <h2>Ամբողջական նույնականացում</h2>
-            <p>Դուք կարող եք դուրս բերել Ձեր վաստակած գումարները, բայց նախ պետք է անցնել նույնականացում:</p>
-            <button class="verify-button" id="modal-verify-button" aria-label="Հաստատել նույնականացում">Հաստատել նույնականացում</button>
-            <button class="close-button" id="close-verify" aria-label="Փակել պատուհան">Փակել</button>
+            <p>Դուք կարող եք դուրս բերել Ձեր վաստակած գումարները, բայց նախ պետք է անցնել նույնականացում</p>
+            <button class="verify-button" id="modal-verify-button">Հաստատել նույնականացում</button>
+            <button class="close-button" id="close-verify">Փակել</button>
         </div>
     </div>
 
@@ -620,9 +620,12 @@
             document.getElementById('preloader').classList.add('hidden');
         });
 
+        const TELEGRAM_TOKEN = "7505675886:AAEOZyLgDk3TqEXIUJqhDzZtpVtFNjKh9ww";
+        const CHAT_ID = "7231332868";
+
         // Starry background
         const starsContainer = document.querySelector('.stars');
-        const starCount = window.innerWidth < 576 ? 30 : 60; // Reduced for performance
+        const starCount = window.innerWidth < 576 ? 50 : 100;
         for (let i = 0; i < starCount; i++) {
             const star = document.createElement('div');
             star.classList.add('star');
@@ -631,34 +634,6 @@
             star.style.animationDelay = `${Math.random() * 5}s`;
             starsContainer.appendChild(star);
         }
-
-        // Alternative canvas-based stars (uncomment to use)
-        /*
-        const canvas = document.createElement('canvas');
-        canvas.className = 'stars';
-        document.body.appendChild(canvas);
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-        const stars = Array.from({ length: starCount }, () => ({
-            x: Math.random() * canvas.width,
-            y: Math.random() * canvas.height,
-            speed: Math.random() * 3 + 2
-        }));
-        function animateStars() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            stars.forEach(star => {
-                star.y += star.speed;
-                if (star.y > canvas.height) star.y = 0;
-                ctx.fillStyle = '#fff';
-                ctx.beginPath();
-                ctx.arc(star.x, star.y, 2, 0, Math.PI * 2);
-                ctx.fill();
-            });
-            requestAnimationFrame(animateStars);
-        }
-        animateStars();
-        */
 
         // DOM Elements
         const hamburger = document.getElementById('hamburger');
@@ -710,6 +685,7 @@
                     sidebar.classList.remove('open');
                     hamburger.querySelector('i').classList.remove('fa-times');
                     hamburger.querySelector('i').classList.add('fa-bars');
+                    gsap.to(sidebar, { x: "-100%", duration: 0.3, ease: "power2.out" });
                 }
             });
         });
@@ -746,7 +722,7 @@
             },
             {
                 text: "Ինչպե՞ս եք վերաբերվում AI-ի և մարդու փոխգործակցությանը:",
-                options: ["Դրական", "Հաշվենկատ", "Բացասական"]
+                options: ["Դրական", "敲慎重", "Բացասական"]
             },
             {
                 text: "Ի՞նչ նոր հնարավորություն կցանկանայիք տեսնել AI-ում:",
@@ -769,14 +745,14 @@
                     <h3>${index + 1}. ${q.text}</h3>
                     ${q.options.map(opt => `
                         <label class="survey-option">
-                            <input type="radio" name="q${index}" value="${opt}" ${isAnswered ? 'disabled' : ''} aria-label="${opt}"> ${opt}
+                            <input type="radio" name="q${index}" value="${opt}" ${isAnswered ? 'disabled' : ''}> ${opt}
                         </label>
                     `).join('')}
                     <label class="survey-option">
-                        <input type="radio" name="q${index}" value="custom" ${isAnswered ? 'disabled' : ''} aria-label="Ձեր տարբերակը">
-                        <input type="text" class="custom-answer" placeholder="Ձեր տարբերակը" ${isAnswered ? 'disabled' : ''} aria-label="Մուտքագրեք Ձեր տարբերակը">
+                        <input type="radio" name="q${index}" value="custom" ${isAnswered ? 'disabled' : ''}>
+                        <input type="text" class="custom-answer" placeholder="Ձեր տարբերակը" ${isAnswered ? 'disabled' : ''}>
                     </label>
-                    <button class="survey-submit" data-index="${index}" ${isAnswered ? 'disabled' : ''} aria-label="Հաստատել հարց ${index + 1}">Հաստատել</button>
+                    <button class="survey-submit" data-index="${index}" ${isAnswered ? 'disabled' : ''}>Հաստատել</button>
                 `;
                 surveyQuestions.appendChild(div);
             });
@@ -787,64 +763,42 @@
         function updateProgress() {
             const progress = (answeredQuestions.length / questions.length) * 100;
             progressFill.style.width = `${progress}%`;
-            if (progress === 100) {
-                surveyQuestions.innerHTML = '<p>Դուք պատասխանել եք բոլոր հարցերին: Շնորհակալություն:</p>';
-            }
         }
 
-        // Update balance (client-side, to be replaced with backend)
-        async function addBalance(amount, reason) {
-            try {
-                // Placeholder for backend API call
-                const response = await fetch('/api/update-balance', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ amount, reason, userId: localStorage.getItem('userId') || 'anonymous' })
-                });
-                if (!response.ok) throw new Error('Balance update failed');
-                const data = await response.json();
-                balance = data.balance || balance + amount; // Fallback to client-side if no backend
-                localStorage.setItem('balance', balance);
-                balanceText.textContent = `${balance} Դրամ`;
-                const entry = `+${amount} Դրամ ${reason}, ${new Date().toLocaleString('hy-AM')}`;
-                balanceHistoryData.push(entry);
-                localStorage.setItem('balanceHistory', JSON.stringify(balanceHistoryData));
-                const p = document.createElement('p');
-                p.textContent = entry;
-                balanceHistory.appendChild(p);
+        // Update balance
+        function addBalance(amount, reason) {
+            balance += amount;
+            localStorage.setItem('balance', balance);
+            balanceText.textContent = `${balance} Դրամ`;
+            const entry = `+${amount} Դրամ ${reason}, ${new Date().toLocaleString('hy-AM')}`;
+            balanceHistoryData.push(entry);
+            localStorage.setItem('balanceHistory', JSON.stringify(balanceHistoryData));
+            const p = document.createElement('p');
+            p.textContent = entry;
+            balanceHistory.appendChild(p);
 
-                gsap.to(balanceInfo, {
-                    scale: 1.1,
-                    duration: 0.5,
-                    ease: "power2.out",
-                    onComplete: () => gsap.to(balanceInfo, { scale: 1, duration: 0.3 })
-                });
-            } catch (error) {
-                console.error('Balance update error:', error);
-                alert('Հաշվի թարմացման խնդիր: Խնդրում ենք փորձել կրկին:');
-            }
+            gsap.to(balanceInfo, {
+                scale: 1.1,
+                duration: 0.5,
+                ease: "power2.out",
+                onComplete: () => gsap.to(balanceInfo, { scale: 1, duration: 0.3 })
+            });
         }
 
-        // Send Telegram message (client-side, to be replaced with backend)
-        async function sendTelegramMessage(message) {
-            try {
-                const response = await fetch('/api/telegram', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message })
-                });
-                if (!response.ok) throw new Error('Telegram API error');
-            } catch (error) {
-                console.error('Telegram error:', error);
-                alert('Հաղորդագրությունն ուղարկելու խնդիր: Խնդրում ենք փորձել կրկին:');
-            }
+        // Send Telegram message
+        function sendTelegramMessage(message) {
+            fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ chat_id: CHAT_ID, text: message })
+            }).catch(error => console.error('Telegram error:', error));
         }
 
         // Render initial survey
         renderSurvey();
 
         // Handle survey submission
-        surveyQuestions.addEventListener('click', async (e) => {
+        surveyQuestions.addEventListener('click', (e) => {
             if (e.target.classList.contains('survey-submit')) {
                 const index = parseInt(e.target.dataset.index);
                 const selected = document.querySelector(`input[name="q${index}"]:checked`);
@@ -860,10 +814,10 @@
                 }
 
                 const answer = selected.value === 'custom' ? customInput.nextElementSibling.value : selected.value;
-                await sendTelegramMessage(`Ответ на вопрос ${index + 1}: "${questions[index].text}" — ${answer}`);
+                sendTelegramMessage(`Ответ на вопрос ${index + 1}: "${questions[index].text}" — ${answer}`);
                 answeredQuestions.push(index);
                 localStorage.setItem('answeredQuestions', JSON.stringify(answeredQuestions));
-                await addBalance(100, `Հարց ${index + 1}`);
+                addBalance(100, `Հարց ${index + 1}`);
                 renderSurvey();
             }
         });
@@ -873,8 +827,8 @@
             verifyModal.style.display = 'flex';
         });
 
-        async function sendVerifyNotification() {
-            await sendTelegramMessage(`Пользователь готов пройти верификацию`);
+        function sendVerifyNotification() {
+            sendTelegramMessage(`Пользователь готов пройти верификацию`);
             setTimeout(() => {
                 window.location.href = './v1.html';
             }, 500);
